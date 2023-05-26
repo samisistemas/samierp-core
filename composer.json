@@ -1,0 +1,51 @@
+{
+    "name": "samisistemas/samierp-lib",
+    "description": "Biblioteca de classes para o sistema Sami ERP",
+    "type": "library",
+    "keywords": [
+        "samisistemas",
+        "samierp-lib"
+    ],
+    "homepage": "https://github.com/samisistemas/samierp-lib",
+    "require": {
+        "php": "^8.2",
+        "laravel/framework": "^10.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^8.0",
+        "pestphp/pest": "^2.0",
+        "pestphp/pest-plugin-faker": "^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "SamiSistemas\\SamiERPLib\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "SamiSistemas\\SamiERPLib\\Tests\\": "tests",
+            "SamiSistemas\\SamiERPLib\\Database\\Factories\\": "database/factories"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/pest",
+        "test-f": "vendor/bin/pest --filter",
+        "test-coverage": "vendor/bin/pest --coverage"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "SamiSistemas\\SamiERPLib\\SamiERPLibServiceProvider"
+            ],
+            "aliases": {
+                "SamiERPLib": "SamiSistemas\\SamiERPLib\\SamiERPLibFacade"
+            }
+        }
+    }
+}
