@@ -1,0 +1,16 @@
+includes:
+    - ./vendor/nunomaduro/larastan/extension.neon
+
+parameters:
+
+    paths:
+        - database/
+        - src/
+        - tests/
+
+    level: 6
+
+    excludePaths:
+        - ./src/SamiERPLib.php
+        - ./src/SamiERPLibFacade.php
+        - ./src/SamiERPLibServiceProvider.php

@@ -1,0 +1,36 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+# Adiciona o nome da issue no início da mensagem do commit
+# Exemplo: git commit -m "SIGLA-123: Mensagem do commit"
+
+# Cores
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+NC='\033[0m' # No Color
+
+# Regex para verificar se o commit possui uma issue
+REGEX='[a-zA-Z0-9,\.\_\-]+-[0-9]+'
+BRANCH_NAME=$(git symbolic-ref --short HEAD)
+ISSUE_NAME=$(echo "$BRANCH_NAME" | grep -o -E "$REGEX")
+COMMIT_MESSAGE=$(cat $1)
+
+# Verifica se o commit possui uma issue
+if [ -z "$ISSUE_NAME" ]; then
+  echo "${RED}O nome da branch não possui uma issue.${NC}"
+  exit 1
+fi
+
+# Verifica se o commit possui uma mensagem
+if [ -z "$COMMIT_MESSAGE" ]; then
+  echo "${RED}O commit não possui uma mensagem.${NC}"
+  exit 1
+fi
+
+# Verifica se o nome da issue já está no início da mensagem do commit
+if [ "$(expr substr "$COMMIT_MESSAGE" 1 ${#ISSUE_NAME})" = "$ISSUE_NAME" ]; then
+  echo "${GREEN}O nome da issue já está no início da mensagem do commit.${NC}"
+  exit 0
+fi
+
+echo "$ISSUE_NAME: $COMMIT_MESSAGE" > $1
