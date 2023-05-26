@@ -20,9 +20,6 @@ jobs:
       - name: Instala os assets
         run: npm install
 
-      - name: Carrega os assets
-        run: npm run build
-
       - name: Cria o banco de dados
         run: |
           mkdir -p database
