@@ -11,7 +11,7 @@
 |
 */
 
-use SamiSistemas\SamiERPLib\Tests\TestCase;
+use SamiSistemas\SamiERPCore\Tests\TestCase;
 
 uses(TestCase::class)->in('Feature', 'Unit');
 

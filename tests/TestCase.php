@@ -1,9 +1,9 @@
 <?php
 
-namespace SamiSistemas\SamiERPLib\Tests;
+namespace SamiSistemas\SamiERPCore\Tests;
 
 use Orchestra\Testbench\TestCase as TestbenchTestCase;
-use SamiSistemas\SamiERPLib\SamiERPLibServiceProvider;
+use SamiSistemas\SamiERPCore\SamiERPCoreServiceProvider;
 
 class TestCase extends TestbenchTestCase
 {
@@ -16,7 +16,7 @@ class TestCase extends TestbenchTestCase
 
     protected function getPackageProviders($app): array
     {
-        return [SamiERPLibServiceProvider::class];
+        return [SamiERPCoreServiceProvider::class];
     }
 
     protected function getEnvironmentSetUp($app): void

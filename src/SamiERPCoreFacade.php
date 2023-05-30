@@ -1,13 +1,13 @@
 <?php
 
-namespace SamiSistemas\SamiERPLib;
+namespace SamiSistemas\SamiERPCore;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @see \SamiSistemas\SamiERPLib\Skeleton\SkeletonClass
+ * @see \SamiSistemas\SamiERPCore\Skeleton\SkeletonClass
  */
-class SamiERPLib extends Facade
+class SamiERPCore extends Facade
 {
     /**
      * Get the registered name of the component.
@@ -16,6 +16,6 @@ class SamiERPLib extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return 'samierp-lib';
+        return 'samierp-core';
     }
 }
