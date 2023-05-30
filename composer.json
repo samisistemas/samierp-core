@@ -1,12 +1,12 @@
 {
-    "name": "samisistemas/samierp-lib",
+    "name": "samisistemas/samierp-core",
     "description": "Biblioteca de classes para o sistema Sami ERP",
     "type": "library",
     "keywords": [
         "samisistemas",
-        "samierp-lib"
+        "samierp-core"
     ],
-    "homepage": "https://github.com/samisistemas/samierp-lib",
+    "homepage": "https://github.com/samisistemas/samierp-core",
     "require": {
         "php": "^8.2",
         "laravel/framework": "^10.0"
@@ -18,13 +18,13 @@
     },
     "autoload": {
         "psr-4": {
-            "SamiSistemas\\SamiERPLib\\": "src/"
+            "SamiSistemas\\SamiERPCore\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "SamiSistemas\\SamiERPLib\\Tests\\": "tests",
-            "SamiSistemas\\SamiERPLib\\Database\\Factories\\": "database/factories"
+            "SamiSistemas\\SamiERPCore\\Tests\\": "tests",
+            "SamiSistemas\\SamiERPCore\\Database\\Factories\\": "database/factories"
         }
     },
     "scripts": {
@@ -41,10 +41,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "SamiSistemas\\SamiERPLib\\SamiERPLibServiceProvider"
+                "SamiSistemas\\SamiERPCore\\SamiERPCoreServiceProvider"
             ],
             "aliases": {
-                "SamiERPLib": "SamiSistemas\\SamiERPLib\\SamiERPLibFacade"
+                "SamiERPCore": "SamiSistemas\\SamiERPCore\\SamiERPCoreFacade"
             }
         }
     }
