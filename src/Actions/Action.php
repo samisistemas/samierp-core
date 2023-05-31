@@ -16,7 +16,7 @@ abstract class Action
      *
      * @return mixed
      */
-    public static function run(...$arguments): mixed
+    public static function run(mixed ...$arguments): mixed
     {
         return app(static::class)->handle(...$arguments);
     }
